@@ -1,7 +1,7 @@
 from fpdf import FPDF
 import pandas as pd
 
-pdf = FPDF(orientation="P", unit="mm", format="A4")
+pdf = FPDF(orientation = "P", unit="mm", format="A4")
 pdf.set_auto_page_break(auto=False, margin=0)
 
 df = pd.read_csv("topics.csv")
@@ -16,7 +16,7 @@ for index, row in df.iterrows():
     for y in range(20,298,10):
         pdf.line(x1=10,y1=y, x2=200,y2=y)
 
-    #Set the footer
+    # Set the footer
     pdf.ln(266)
     pdf.set_font(family="Times", style="B", size=8)
     pdf.set_text_color(100, 20, 200)
